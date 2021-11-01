@@ -12,46 +12,46 @@ class App extends Component {
   state = {loaded: false, kycAddress: "0x123...", tokenSaleAddress: null};
   
   componentDidMount = async () => {
-    try {
-      // Get network provider and web3 instance.
-      this.web3 = await getWeb3();
+    // try {
+    //   // Get network provider and web3 instance.
+    //   this.web3 = await getWeb3();
       
-      // Use web3 to get the user's accounts.
-      this.accounts = await this.web3.eth.getAccounts();
-      // this.accounts = await this.web3.request({ method: 'eth_requestAccounts' });
+    //   // Use web3 to get the user's accounts.
+    //   this.accounts = await this.web3.eth.getAccounts();
+    //   // this.accounts = await this.web3.request({ method: 'eth_requestAccounts' });
     
-      // Get the contract instance.
-      this.networkId = await this.web3.eth.net.getId();
+    //   // Get the contract instance.
+    //   this.networkId = await this.web3.eth.net.getId();
       
-      this.tokenInstance = new this.web3.eth.Contract(
-        CDEXToken.abi,
-        CDEXToken.networks[this.networkId] && CDEXToken.networks[this.networkId].address,
-      );
-      
-
-      this.tokenSaleInstance = new this.web3.eth.Contract(
-        CDEXSale.abi,
-        CDEXSale.networks[this.networkId] && CDEXSale.networks[this.networkId].address,
-      );
+    //   this.tokenInstance = new this.web3.eth.Contract(
+    //     CDEXToken.abi,
+    //     CDEXToken.networks[this.networkId] && CDEXToken.networks[this.networkId].address,
+    //   );
       
 
-      this.kycInstance = new this.web3.eth.Contract(
-        KycContract.abi,
-        KycContract.networks[this.networkId] && KycContract.networks[this.networkId].address,
-      );
+    //   this.tokenSaleInstance = new this.web3.eth.Contract(
+    //     CDEXSale.abi,
+    //     CDEXSale.networks[this.networkId] && CDEXSale.networks[this.networkId].address,
+    //   );
+      
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
-      this.setState({loaded: true, tokenSaleAddress: CDEXSale.networks[this.networkId].address});
-    } catch (error) {
-      // Catch any errors for any of the above operations.
-      alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`,
-      );
-      console.error(error);
-    }
+    //   this.kycInstance = new this.web3.eth.Contract(
+    //     KycContract.abi,
+    //     KycContract.networks[this.networkId] && KycContract.networks[this.networkId].address,
+    //   );
+
+    //   // Set web3, accounts, and contract to the state, and then proceed with an
+    //   // example of interacting with the contract's methods.
+    //   this.setState({loaded: true, tokenSaleAddress: CDEXSale.networks[this.networkId].address});
+    // } catch (error) {
+    //   // Catch any errors for any of the above operations.
+    //   alert(
+    //     `Failed to load web3, accounts, or contract. Check console for details.`,
+    //   );
+    //   console.error(error);
+    // }
   };
-
+  
   handleInputChange = (event)=>{
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
@@ -67,9 +67,9 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.loaded) {
-      return <div>Loading Web3, accounts, and contract...</div>;
-    }
+    // if (!this.state.loaded) {
+    //   return <div>Loading Web3, accounts, and contract...</div>;
+    // }
     return (
       <div className="App">
         <h1>CDEX Token Sale</h1>
