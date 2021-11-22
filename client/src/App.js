@@ -72,13 +72,13 @@ class App extends Component {
     // }
     return (
       <div className="App">
-        {/* <h1>CDEX Token Sale</h1>
+        <h1>CDEX Token Sale</h1>
         <p>Get your Tokens today!.</p>
         <h2>Kyc Whitelisting</h2>
         Address to allow: <input type="text" name="kycAddress" value={this.state.kycAddress} onChange={this.handleInputChange}/>
         <button type="button" onClick={this.handleKycWhitelisting}>Add to Whitelist</button>
         <h2>Buy CDEX Tokens </h2>
-        <p>If you want to buy tokens, send Wei to this address: {this.state.tokenSaleAddress}</p> */}
+        <p>If you want to buy tokens, send Wei to this address: {this.state.tokenSaleAddress}</p>
       </div>
     );
   }
