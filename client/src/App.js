@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CDEXToken from "./contracts/CDEXToken.json";
 import CDEXSale from "./contracts/CDEXSale.json";
 import KycContract from "./contracts/KycContract.json";
-
 import getWeb3 from "./getWeb3";
 
 import "./App.css";
